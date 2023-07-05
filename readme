@@ -4,27 +4,7 @@
 算法逻辑
 CalculateResult函数：该函数接受一个双色球开奖号码的红球列表作为输入，使用哈希函数计算结果值，并返回结果值作为抽奖结果。
 
-SelectIDs函数：该函数接受结果值、用户池中的ID列表、需要选择的ID个数以及选择大于还是小于结果值的标志作为输入。它首先根据用户ID与结果值的绝对值距离进行排序，然后选择离结果值最近的指定个数的ID，并根据选择大于还是小于结果值的标志进行筛选。
-
-使用说明
-导入包：在您的Golang项目中，导入lottery包。
-go
-Copy code
-import "your-package-path/lottery"
-计算抽奖结果：使用CalculateResult函数根据双色球开奖号码计算抽奖结果。
-go
-Copy code
-redBalls := []int{1, 2, 3, 4, 5, 6}
-result := lottery.CalculateResult(redBalls)
-选择中奖用户：使用SelectIDs函数根据结果值选择离其最近的指定个数的用户ID。
-go
-Copy code
-result := 1500
-userPool := []int{1000, 1200, 1300, 1400, 1600, 1800}
-numIDs := 3
-
-selectedIDs := lottery.SelectIDs(result, userPool, numIDs, selectGreater)
-在使用SelectIDs函数时，您需要提供结果值、用户池中的ID列表、需要选择的ID个数以及选择大于还是小于结果值的标志。函数将返回一个包含选择的用户ID的切片。
+SelectClosestValues 函数：该函数接受结果值、用户池中的ID列表、需要选择的ID个数以及选择大于还是小于结果值的标志作为输入。它首先根据用户ID与结果值的绝对值距离进行排序，然后选择离结果值最近的指定个数的ID。
 
 注意事项
 请确保提供的双色球开奖号码与算法一致，以确保结果的可预测性。
